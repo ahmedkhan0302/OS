@@ -108,90 +108,90 @@
 - **diff**: Compares files line by line and displays the differences.
   - Syntax: `diff [options] file1 file2`
 
-- **cmp**: Compares two files byte by byte and shows the first byte that differs.
+- **cmp*: Compares two files byte by byte and shows the first byte that differs.
   - Syntax: `cmp [options] file1 file2`
 
-- **comm**: Compares two sorted files line by line and displays lines that are unique or common.
+- comm: Compares two sorted files line by line and displays lines that are unique or common.
   - Syntax: `comm [options] file1 file2`
 
-- **sort**: Sorts lines of text files alphabetically or numerically.
+- sort: Sorts lines of text files alphabetically or numerically.
   - Syntax: `sort [options] [file]`
 
-- **export**: Sets environment variables for the current session.
+- export: Sets environment variables for the current session.
   - Syntax: `export [variable]=[value]`
 
-- **zip**: Compresses files into a ZIP archive format.
+- zip: Compresses files into a ZIP archive format.
   - Syntax: `zip [options] [zipfile] [files]`
 
-- **unzip**: Extracts files from a ZIP archive.
+- unzip: Extracts files from a ZIP archive.
   - Syntax: `unzip [options] [zipfile]`
 
-- **ssh**: Connects to a remote machine securely using the SSH protocol.
+- ssh: Connects to a remote machine securely using the SSH protocol.
   - Syntax: `ssh [user]@[hostname]`
 
-- **service**: Manages system services such as starting, stopping, and restarting them.
+- Service: Manages system services such as starting, stopping, and restarting them.
   - Syntax: `service [service_name] [action]`
 
-- **ps**: Displays information about active processes.
+- ps: Displays information about active processes.
   - Syntax: `ps [options]`
 
-- **kill and killall**: Terminates processes by process ID (PID) or process name.
+- kill and killall: Terminates processes by process ID (PID) or process name.
   - Syntax: `kill [options] PID` or `killall [options] process_name`
 
-- **df**: Shows disk space usage of file systems.
+- df: Shows disk space usage of file systems.
   - Syntax: `df [options]`
 
-- **mount**: Attaches file systems and devices to the Linux file system hierarchy.
+- mount: Attaches file systems and devices to the Linux file system hierarchy.
   - Syntax: `mount [options] [device] [mount_point]`
 
-- **chmod**: Changes file permissions.
+- chmod: Changes file permissions.
   - Syntax: `chmod [options] mode file`
 
-- **chown**: Changes file ownership.
+- chown: Changes file ownership.
   - Syntax: `chown [options] user:group file`
 
-- **ifconfig**: Displays network interface configuration information.
+- ifconfig: Displays network interface configuration information.
   - Syntax: `ifconfig [interface]`
 
-- **traceroute**: Traces the route taken by packets across an IP network.
+- traceroute: Traces the route taken by packets across an IP network.
   - Syntax: `traceroute [options] [hostname/IP]`
 
-- **wget**: Downloads files from the internet using HTTP, HTTPS, or FTP protocols.
+- wget: Downloads files from the internet using HTTP, HTTPS, or FTP protocols.
   - Syntax: `wget [options] [URL]`
 
-- **ufw**: Uncomplicated Firewall - configures and manages firewall rules.
+- ufw: Uncomplicated Firewall - configures and manages firewall rules.
   - Syntax: `ufw [options] [rule]`
 
-- **iptables**: Manages firewall rules in Linux systems.
+- iptables: Manages firewall rules in Linux systems.
   - Syntax: `iptables [options] [rule]`
 
-- **apt, pacman, yum, rpm**: Package managers used to install, update, and manage software packages depending on the Linux distribution.
+- apt, pacman, yum, rpm: Package managers used to install, update, and manage software packages depending on the Linux distribution.
   - Syntax examples: `apt install [package]`, `pacman -S [package]`, `yum install [package]`, `rpm -i [package.rpm]`
 
-- **sudo**: Allows users to execute commands with elevated privileges.
+- sudo: Allows users to execute commands with elevated privileges.
   - Syntax: `sudo [command]`
 
-- **cal**: Displays a calendar in the terminal.
+- cal: Displays a calendar in the terminal.
   - Syntax: `cal [month] [year]`
 
-- **alias**: Creates custom shortcuts or aliases for frequently used commands.
+- alias: Creates custom shortcuts or aliases for frequently used commands.
   - Syntax: `alias [alias_name]='[command]'`
 
-- **dd**: Converts and copies files, creating bootable USB sticks and backup drives.
+- dd: Converts and copies files, creating bootable USB sticks and backup drives.
   - Syntax: `dd [options] if=[input_file] of=[output_file]`
 
-- **whereis**: Locates binary, source, and manual page files for a command.
+- whereis: Locates binary, source, and manual page files for a command.
   - Syntax: `whereis [command]`
 
-- **whatis**: Displays a brief description of what a command does.
+- whatis: Displays a brief description of what a command does.
   - Syntax: `whatis [command]`
 
-- **top**: Displays real-time information about active processes and system resource usage.
+- top: Displays real-time information about active processes and system resource usage.
   - Syntax: `top`
 
-- **useradd and usermod**: Commands to add or modify user accounts and their attributes.
+- useradd and usermod: Commands to add or modify user accounts and their attributes.
   - Syntax: `useradd [options] username`, `usermod [options] username`
 
-- **passwd**: Sets or changes user passwords.
+- passwd: Sets or changes user passwords.
   - Syntax: `passwd [username]`
 
