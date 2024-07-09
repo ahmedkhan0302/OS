@@ -1,0 +1,8 @@
+echo "Enter File Directory: "
+read dir
+if [ $dir == $(pwd) ]
+then
+    echo "Same Directory"
+else
+    echo "Different Directory"
+fi
