@@ -1,0 +1,5 @@
+for i in {1..20}
+do
+    x=`expr $i \* $i`
+    echo $x
+Done
