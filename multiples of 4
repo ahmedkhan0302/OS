@@ -1,0 +1,8 @@
+for i in {10..60}
+do
+    q=`expr $i % 4`
+    if [ $q -eq 0 ]
+    then
+   	 echo $i
+    fi
+done
