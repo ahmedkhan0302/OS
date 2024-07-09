@@ -1,0 +1,27 @@
+##### CHECK FOR ERRORS!!!!!
+
+
+echo -n "Enter n value: "
+read n
+
+# Loop from 1 to $n using a traditional for loop
+for (( i=1; i<=n; i++ )); do
+    p=$((n - i))
+    
+    # Print spaces before the numbers
+    for (( j=p; j>0; j-- )); do 
+        echo -n " "
+    done
+    
+    # Print the numbers
+    for (( j=1; j<=i; j++ )); do 
+        echo -n "$i"
+    done
+    
+    # Print spaces after the numbers
+    for (( j=p; j>0; j-- )); do 
+        echo -n " "
+    done
+    
+    echo  # Move to the next line after each iteration
+done
