@@ -1,0 +1,13 @@
+echo -n "Enter a number: "
+read number
+
+digits=($(echo "$number" | grep -o .)) # Extract digits and store them in an array
+
+sorted_digits=($(printf "%s\n" "${digits[@]}" | sort -n)) # Sorting
+
+second_smallest=${sorted_digits[1]}
+second_largest=${sorted_digits[-2]}
+
+difference=$((second_largest - second_smallest))
+
+echo "The difference between the second largest and second smallest digit is: $difference"
