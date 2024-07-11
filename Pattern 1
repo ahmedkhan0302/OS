@@ -12,9 +12,5 @@ for (( i=1; i<=n; i++ )); do
         echo -n "$i "
     done
     
-    for (( j=p; j>0; j-- )); do 
-        echo -n " "
-    done
-    
     echo 
 done
