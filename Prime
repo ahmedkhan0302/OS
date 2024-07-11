@@ -1,0 +1,28 @@
+echo "Enter the number"
+read a
+is_prime=1
+
+if [ $a -le 1 ]
+then 
+    is_prime=0
+else
+    for((i=2; i*i<=a; i++))
+    do
+        if [ $((a%i)) -eq 0 ]
+        then
+            is_prime=0
+        break
+        fi
+    done
+fi
+
+if [ $is_prime -eq 1 ]
+then
+    echo "Prime Number"
+else
+    echo "Not a Prime number"
+fi
+
+square=`expr $a \* $a`
+echo "Square = $square"
+    
