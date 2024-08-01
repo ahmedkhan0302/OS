@@ -1,0 +1,131 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+class process {
+public:
+    int no, bt, at, tat, wt, ct;
+
+    process() {
+        bt = 0;
+        at = 0;
+    }
+
+    void getval(int a, int b, int c) {
+        no = a;
+        bt = b;
+        at = c;
+    }
+
+    void display() {
+        cout << " P" << no << "\t\t\t" << bt << "\t\t" << at << "\t\t" << tat << "\t\t" << wt << "\t\t" << ct << "\n";
+    }
+};
+
+void sort_process(process* p, int n) {
+    process temp;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if ((p[j].at > p[j + 1].at) || ((p[j].at == p[j + 1].at) && (p[j].bt > p[j + 1].bt))) {
+                temp = p[j];
+                p[j] = p[j + 1];
+                p[j + 1] = temp;
+            }
+        }
+    }
+}
+
+void sort_id(process* p, int n) {
+    process temp;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (p[j].no > p[j + 1].no) {
+                temp = p[j];
+                p[j] = p[j + 1];
+                p[j + 1] = temp;
+            }
+        }
+    }
+}
+
+void sjf(int n, process* p) {
+    sort_process(p, n);
+    int i, tat = 0, wt = 0, current_time = p[0].at;
+
+    current_time = p[0].at;
+    p[0].ct = current_time + p[0].bt;
+    p[0].tat = p[0].bt;
+    p[0].wt = 0;
+
+    current_time = p[0].ct;
+
+    for (i = 1; i < n; i++) {
+        if (current_time < p[i].at) {
+            current_time = p[i].at;
+        }
+        p[i].ct = current_time + p[i].bt;
+        p[i].tat = p[i].ct - p[i].at;
+        p[i].wt = p[i].tat - p[i].bt;
+        current_time = p[i].ct;
+    }
+
+    cout << "\nGantt Chart:\n |";
+    current_time = p[0].at;
+    for (i = 0; i < n; i++) {
+        if (current_time < p[i].at) {
+            cout << " IDLE |";
+            current_time = p[i].at;
+        }
+        cout << "   P" << p[i].no << "  |";
+        current_time += p[i].bt;
+    }
+    cout << "\n " << p[0].at;
+    current_time = p[0].at;
+    for (i = 0; i < n; i++) {
+        if (current_time < p[i].at) {
+            cout << "      " << p[i].at;
+            current_time = p[i].at;
+        }
+        cout << "      " << setw(2) << p[i].ct;
+        current_time += p[i].bt;
+    }
+    cout << "\n";
+
+    for (i = 0; i < n; i++) {
+        tat += p[i].tat;
+        wt += p[i].wt;
+    }
+    sort_id(p, n);
+
+    cout << "Process \tBurst Time \tArrival Time \tTurnaround Time \tWaiting Time\t CT \n";
+    for (i = 0; i < n; i++) {
+        p[i].display();
+    }
+
+    cout << "Average Turnaround Time: " << (float)tat / n << "\n";
+    cout << "Average Waiting Time: " << (float)wt / n << "\n";
+}
+
+int main() {
+    int n, i, f, b, a = 0;
+    cout << "Enter the number of processes: ";
+    cin >> n;
+    process* p = new process[n];
+
+    cout << "Are the arrival times provided? (1 for yes / 0 for no): ";
+    cin >> f;
+
+    for (i = 0; i < n; i++) {
+        cout << "Enter the burst time of process p" << i + 1 << ": ";
+        cin >> b;
+        if (f == 1) {
+            cout << "Enter the arrival time of process p" << i + 1 << ": ";
+            cin >> a;
+        }
+        p[i].getval(i + 1, b, a);
+    }
+
+    sjf(n, p);
+    delete[] p;
+    return 0;
+}
